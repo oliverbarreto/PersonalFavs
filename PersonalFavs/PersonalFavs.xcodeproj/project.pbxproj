@@ -15,6 +15,7 @@
 		A7EE0AB71ED361E900B09615 /* PersonalFavsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0AB61ED361E900B09615 /* PersonalFavsTests.swift */; };
 		A7EE0AC21ED361E900B09615 /* PersonalFavsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0AC11ED361E900B09615 /* PersonalFavsUITests.swift */; };
 		A7EE0ADF1ED3633900B09615 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0ADE1ED3633900B09615 /* HomeCollectionViewController.swift */; };
+		A7EE0AE11ED376D400B09615 /* HomePersonalFavVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0AE01ED376D400B09615 /* HomePersonalFavVCCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A7EE0AC11ED361E900B09615 /* PersonalFavsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalFavsUITests.swift; sourceTree = "<group>"; };
 		A7EE0AC31ED361E900B09615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7EE0ADE1ED3633900B09615 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		A7EE0AE01ED376D400B09615 /* HomePersonalFavVCCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePersonalFavVCCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		A7EE0AD41ED3627B00B09615 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A7EE0AE01ED376D400B09615 /* HomePersonalFavVCCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 			files = (
 				A7EE0ADF1ED3633900B09615 /* HomeCollectionViewController.swift in Sources */,
 				A7EE0A9F1ED361E900B09615 /* AppDelegate.swift in Sources */,
+				A7EE0AE11ED376D400B09615 /* HomePersonalFavVCCollectionViewCell.swift in Sources */,
 				A7EE0AA71ED361E900B09615 /* PersonalFavs.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
