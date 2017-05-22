@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A7EE0A9F1ED361E900B09615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0A9E1ED361E900B09615 /* AppDelegate.swift */; };
-		A7EE0AA11ED361E900B09615 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0AA01ED361E900B09615 /* ViewController.swift */; };
 		A7EE0AA41ED361E900B09615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7EE0AA21ED361E900B09615 /* Main.storyboard */; };
 		A7EE0AA71ED361E900B09615 /* PersonalFavs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0AA51ED361E900B09615 /* PersonalFavs.xcdatamodeld */; };
 		A7EE0AA91ED361E900B09615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EE0AA81ED361E900B09615 /* Assets.xcassets */; };
@@ -37,12 +36,11 @@
 /* Begin PBXFileReference section */
 		A7EE0A9B1ED361E900B09615 /* PersonalFavs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalFavs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EE0A9E1ED361E900B09615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7EE0AA01ED361E900B09615 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A7EE0AA31ED361E900B09615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7EE0AA61ED361E900B09615 /* PersonalFavs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonalFavs.xcdatamodel; sourceTree = "<group>"; };
-		A7EE0AA81ED361E900B09615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7EE0AA81ED361E900B09615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
 		A7EE0AAB1ED361E900B09615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A7EE0AAD1ED361E900B09615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7EE0AAD1ED361E900B09615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
 		A7EE0AB21ED361E900B09615 /* PersonalFavsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalFavsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EE0AB61ED361E900B09615 /* PersonalFavsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalFavsTests.swift; sourceTree = "<group>"; };
 		A7EE0AB81ED361E900B09615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,12 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				A7EE0A9E1ED361E900B09615 /* AppDelegate.swift */,
-				A7EE0AA01ED361E900B09615 /* ViewController.swift */,
-				A7EE0AA21ED361E900B09615 /* Main.storyboard */,
-				A7EE0AA81ED361E900B09615 /* Assets.xcassets */,
-				A7EE0AAA1ED361E900B09615 /* LaunchScreen.storyboard */,
-				A7EE0AAD1ED361E900B09615 /* Info.plist */,
-				A7EE0AA51ED361E900B09615 /* PersonalFavs.xcdatamodeld */,
+				A7EE0ACF1ED3627B00B09615 /* Classes */,
+				A7EE0AD51ED3627B00B09615 /* Resources */,
 			);
 			path = PersonalFavs;
 			sourceTree = "<group>";
@@ -126,6 +120,129 @@
 				A7EE0AC31ED361E900B09615 /* Info.plist */,
 			);
 			path = PersonalFavsUITests;
+			sourceTree = "<group>";
+		};
+		A7EE0ACF1ED3627B00B09615 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A7EE0AD01ED3627B00B09615 /* APIs */,
+				A7EE0AD11ED3627B00B09615 /* Controllers */,
+				A7EE0AD41ED3627B00B09615 /* Views */,
+				A7EE0AD31ED3627B00B09615 /* Models */,
+				A7EE0AD21ED3627B00B09615 /* Extensions */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A7EE0AD01ED3627B00B09615 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		A7EE0AD11ED3627B00B09615 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A7EE0AD21ED3627B00B09615 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A7EE0AD31ED3627B00B09615 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7EE0AA51ED361E900B09615 /* PersonalFavs.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A7EE0AD41ED3627B00B09615 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A7EE0AD51ED3627B00B09615 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A7EE0AD61ED3627B00B09615 /* MediaAssets */,
+				A7EE0ADB1ED3627B00B09615 /* Plists */,
+				A7EE0ADC1ED3627B00B09615 /* Storyboards */,
+				A7EE0ADD1ED3627B00B09615 /* XIBs */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A7EE0AD61ED3627B00B09615 /* MediaAssets */ = {
+			isa = PBXGroup;
+			children = (
+				A7EE0AA81ED361E900B09615 /* Assets.xcassets */,
+				A7EE0AD71ED3627B00B09615 /* Icons */,
+				A7EE0AD81ED3627B00B09615 /* Images */,
+				A7EE0AD91ED3627B00B09615 /* Sounds */,
+				A7EE0ADA1ED3627B00B09615 /* Sprites */,
+			);
+			path = MediaAssets;
+			sourceTree = "<group>";
+		};
+		A7EE0AD71ED3627B00B09615 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		A7EE0AD81ED3627B00B09615 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		A7EE0AD91ED3627B00B09615 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		A7EE0ADA1ED3627B00B09615 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sprites;
+			sourceTree = "<group>";
+		};
+		A7EE0ADB1ED3627B00B09615 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				A7EE0AAD1ED361E900B09615 /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		A7EE0ADC1ED3627B00B09615 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A7EE0AA21ED361E900B09615 /* Main.storyboard */,
+				A7EE0AAA1ED361E900B09615 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A7EE0ADD1ED3627B00B09615 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +313,7 @@
 				TargetAttributes = {
 					A7EE0A9A1ED361E800B09615 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 83JFF66S9C;
 						ProvisioningStyle = Automatic;
 					};
 					A7EE0AB11ED361E900B09615 = {
@@ -262,7 +380,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7EE0AA11ED361E900B09615 /* ViewController.swift in Sources */,
 				A7EE0A9F1ED361E900B09615 /* AppDelegate.swift in Sources */,
 				A7EE0AA71ED361E900B09615 /* PersonalFavs.xcdatamodeld in Sources */,
 			);
@@ -306,6 +423,7 @@
 				A7EE0AA31ED361E900B09615 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		A7EE0AAA1ED361E900B09615 /* LaunchScreen.storyboard */ = {
@@ -314,6 +432,7 @@
 				A7EE0AAB1ED361E900B09615 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -416,6 +535,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 83JFF66S9C;
 				INFOPLIST_FILE = PersonalFavs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverbarreto.PersonalFavs;
@@ -428,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 83JFF66S9C;
 				INFOPLIST_FILE = PersonalFavs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverbarreto.PersonalFavs;
@@ -535,7 +656,8 @@
 				A7EE0AA61ED361E900B09615 /* PersonalFavs.xcdatamodel */,
 			);
 			currentVersion = A7EE0AA61ED361E900B09615 /* PersonalFavs.xcdatamodel */;
-			path = PersonalFavs.xcdatamodeld;
+			name = PersonalFavs.xcdatamodeld;
+			path = ../../PersonalFavs.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
