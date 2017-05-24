@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7500C601ED5FBCE0014D556 /* UIVIew_AnchorUtility_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7500C5F1ED5FBCE0014D556 /* UIVIew_AnchorUtility_Extension.swift */; };
+		A7500C621ED5FBD50014D556 /* UIColor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7500C611ED5FBD50014D556 /* UIColor_Extension.swift */; };
+		A7500C641ED600960014D556 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7500C631ED600960014D556 /* Constants.swift */; };
 		A7EE0A9F1ED361E900B09615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0A9E1ED361E900B09615 /* AppDelegate.swift */; };
 		A7EE0AA41ED361E900B09615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7EE0AA21ED361E900B09615 /* Main.storyboard */; };
 		A7EE0AA71ED361E900B09615 /* PersonalFavs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7EE0AA51ED361E900B09615 /* PersonalFavs.xcdatamodeld */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7500C5F1ED5FBCE0014D556 /* UIVIew_AnchorUtility_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVIew_AnchorUtility_Extension.swift; sourceTree = "<group>"; };
+		A7500C611ED5FBD50014D556 /* UIColor_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
+		A7500C631ED600960014D556 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A7EE0A9B1ED361E900B09615 /* PersonalFavs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalFavs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EE0A9E1ED361E900B09615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7EE0AA31ED361E900B09615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 		A7EE0AD01ED3627B00B09615 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
+				A7500C631ED600960014D556 /* Constants.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -156,6 +163,8 @@
 		A7EE0AD21ED3627B00B09615 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A7500C611ED5FBD50014D556 /* UIColor_Extension.swift */,
+				A7500C5F1ED5FBCE0014D556 /* UIVIew_AnchorUtility_Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -390,6 +399,9 @@
 				A7EE0A9F1ED361E900B09615 /* AppDelegate.swift in Sources */,
 				A7EE0AE11ED376D400B09615 /* HomePersonalFavVCCollectionViewCell.swift in Sources */,
 				A7EE0AA71ED361E900B09615 /* PersonalFavs.xcdatamodeld in Sources */,
+				A7500C641ED600960014D556 /* Constants.swift in Sources */,
+				A7500C601ED5FBCE0014D556 /* UIVIew_AnchorUtility_Extension.swift in Sources */,
+				A7500C621ED5FBD50014D556 /* UIColor_Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +650,7 @@
 				A7EE0AC81ED361E900B09615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7EE0AC91ED361E900B09615 /* Build configuration list for PBXNativeTarget "PersonalFavsTests" */ = {
 			isa = XCConfigurationList;
@@ -646,6 +659,7 @@
 				A7EE0ACB1ED361E900B09615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7EE0ACC1ED361E900B09615 /* Build configuration list for PBXNativeTarget "PersonalFavsUITests" */ = {
 			isa = XCConfigurationList;
@@ -654,6 +668,7 @@
 				A7EE0ACE1ED361E900B09615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -14,15 +14,14 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.title = "Family"
-        collectionView?.backgroundColor = UIColor.white
+        
+        setupView()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(HomePersonalFavVCCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(HomePersonalFavVCCollectionViewCell.self, forCellWithReuseIdentifier: Config.CellIDs.homeVCCellID)
 
         // Do any additional setup after loading the view.
     }
@@ -32,41 +31,93 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
+    
+    //MARK: - VC Lifecycle
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    override var prefersStatusBarHidden: Bool {
+        return false
     }
-    */
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
 
-    // MARK: UICollectionViewDataSource
+    //MARK: - Custom Methods
+    
+    private func setupView() {
+        
+        // Properly setup the UICollectionViewFlowLayout
+        self.collectionView?.showsVerticalScrollIndicator = false
+        self.collectionView?.showsHorizontalScrollIndicator = false
+        
+        setupCustomLayout()
+        
+        // Setup NavigationBar
+        navigationItem.title = "Family"
+        
+        // Setup VC
+        collectionView?.backgroundColor = UIColor(hex: Config.Colors.primaryBGColor)
+    }
+
+    private func setupCustomLayout() {
+        
+        // Setup the layout config for UIEdgeInsets for the UICollectionView items. The size of each item will be calculated later in the delegate method instead of setting the size in the layout setup with layout.itemSize = CGSize(...)
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.sectionInset = UIEdgeInsets(top: CGFloat(Config.CollectionViewLayout.sectionPaddingTop), left: CGFloat(Config.CollectionViewLayout.sectionPaddingLeft), bottom: CGFloat(Config.CollectionViewLayout.sectionPaddingBottom), right: CGFloat(Config.CollectionViewLayout.sectionPaddingRight))
+        layout.minimumInteritemSpacing = CGFloat(Config.CollectionViewLayout.itemsMinimumInteritemSpacing)
+        layout.minimumLineSpacing = CGFloat(Config.CollectionViewLayout.itemsMinimumLineSpacing)
+        //layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
+        
+        self.collectionView?.collectionViewLayout = layout
+        
+    }
+
+    // MARK: - UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return Config.DataSource.numberOfSectionsInCollectionHomeView
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return Config.DataSource.numberOfItemsInCollectionHomeView
     }
 
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Config.CellIDs.homeVCCellID, for: indexPath) as! HomePersonalFavVCCollectionViewCell
     
         // Configure the cell
+        cell.backgroundView?.backgroundColor = UIColor.black
+        cell.label.text = String(indexPath.item + 1)
         
         return cell
     }
 
-    // MARK: UICollectionViewDelegateFlowLayout
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: UIScreen.main.bounds.width, height: 200)
-    }
 
+        // Calculate the size of each item based on Config.CollectionViewLayout constants
+        let paddingSpace = Config.CollectionViewLayout.sectionPaddingLeft + Config.CollectionViewLayout.sectionPaddingRight + (Double((Config.CollectionViewLayout.itemsPerRow - 1)) * Config.CollectionViewLayout.itemsPadding)
+        let width = view.frame.width - CGFloat(paddingSpace)
+        let widthPerItem = width / CGFloat(Config.CollectionViewLayout.itemsPerRow)
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+ 
+
+/*
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 2.0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 2.0
+    }
+*/
+    
     // MARK: UICollectionViewDelegate
 
     /*

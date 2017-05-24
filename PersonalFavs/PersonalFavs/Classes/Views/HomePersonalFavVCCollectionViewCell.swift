@@ -21,10 +21,34 @@ class HomePersonalFavVCCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func setupViews() {
-        //addSubview(view: UIView)
-        self.backgroundColor = UIColor.green
+    let thumbnailImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = UIColor(hex: Config.Colors.secondaryBGColor)
         
+        return imageView
+    }()
+    
+    let label:UILabel = {
+       let mylabel = UILabel()
+        mylabel.text = "label"
+        mylabel.translatesAutoresizingMaskIntoConstraints = false
+        mylabel.textColor = UIColor(hex: Config.Colors.secondaryTextColor)
+
+        return mylabel
+    }()
+    
+    func setupViews() {
+        self.addSubview(thumbnailImageView)
+        self.addSubview(label)
+        
+        let margins = thumbnailImageView.layoutMarginsGuide
+        
+        thumbnailImageView.widthAnchor.constraint(equalToConstant: self.bounds.width).isActive = true
+        thumbnailImageView.heightAnchor.constraint(equalToConstant: self.bounds.height).isActive = true
+        
+        label.centerXAnchor.constraint(equalTo: thumbnailImageView.centerXAnchor, constant: 0).isActive = true
+        label.centerYAnchor.constraint(equalTo: thumbnailImageView.centerYAnchor, constant: 0).isActive = true
     }
     
 }
