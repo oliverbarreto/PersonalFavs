@@ -8,27 +8,100 @@
 
 import UIKit
 import CoreData
+import Contacts
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // Main Window
     var window: UIWindow?
 
-
+    // Register iOS Permision for Contacts Framework
+    var contactStore = CNContactStore()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        
+        // Checks for first launch
+        let firstLaunchObserver = FirstLaunchObserver()
+        
+        if firstLaunchObserver.isFirstLaunch {
+            // Load pre-deefined model objects
+            DataStoreManager.shared.initWithDummyValues()
+        } else {
+            // Unarchive from disk
+            DataStoreManager.shared.loadFavFeeds()
+            DataStoreManager.shared.unarchiveModel()
+        }
+        
         
         // Manually set the window to later put the initial UICollectionVC
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-     
+        
         // Initialize basic Layout for the cells and create the UICollectionVC
         let layout = UICollectionViewFlowLayout()
-        window?.rootViewController = UINavigationController(rootViewController: HomeCollectionViewController(collectionViewLayout: layout))
+        window?.rootViewController = HomeController(collectionViewLayout: layout)
+        //window?.rootViewController = UINavigationController(rootViewController: HomeController(collectionViewLayout: layout))
+        
         
         return true
     }
+    
 
+    // MARK: - Custom Methods
+    
+    class func sharedDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    func checkAccessStatus(completionHandler: @escaping (_ accessGranted: Bool) -> Void) {
+        let authorizationStatus = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
+        
+        switch authorizationStatus {
+        case .authorized:
+            completionHandler(true)
+            
+        case .denied, .notDetermined:
+            self.contactStore.requestAccess(for: CNEntityType.contacts, completionHandler: { (access, accessError) -> Void in
+                if access {
+                    completionHandler(access)
+                } else {
+                    //print("access denied")
+                    if authorizationStatus == CNAuthorizationStatus.denied {
+                        DispatchQueue.main.async(execute: {
+                            let message = "\(accessError!.localizedDescription)\n\nPlease allow the app to access your contacts through the Settings."
+                            self.showAlertMessage(message: message)
+                        })
+                    }
+                }
+            })
+        
+        default:
+            completionHandler(false)
+        }
+    }
+    
+    
+    func showAlertMessage(message: String) {
+        let alertController = UIAlertController(title: "PersonalFavs", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let dismissAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action) -> Void in
+        }
+        
+        alertController.addAction(dismissAction)
+        
+        let pushedViewControllers = (self.window?.rootViewController as! UINavigationController).viewControllers
+        let presentedViewController = pushedViewControllers[pushedViewControllers.count - 1]
+        
+        presentedViewController.present(alertController, animated: true, completion: nil)
+    }
+
+    
+    
+    // MARK: - AppDelegate Methods
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -53,6 +126,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+    
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
@@ -81,6 +156,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
+    
+    
 
     // MARK: - Core Data Saving support
 
